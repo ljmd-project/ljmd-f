@@ -462,6 +462,7 @@ PROGRAM LJMD
 
   ! clean up: close files, free memory
   WRITE(stdout,'(A)') 'Simulation Done.'
+  WRITE(stdout,'(A)') 'KatKor was Here.'
   CALL rmcell
   CALL ioclose
 
