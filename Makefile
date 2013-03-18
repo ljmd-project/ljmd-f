@@ -13,7 +13,7 @@ OBJ_SERIAL=$(SRC:src/%.f90=Obj-serial/%.o)
 OBJ_PARALLEL=$(SRC:src/%.f90=Obj-parallel/%.o)
 ############################################
 
-default: serial parallel
+default: serial # parallel
 
 serial parallel:
 	$(MAKE) $(MFLAGS) -C Obj-$@

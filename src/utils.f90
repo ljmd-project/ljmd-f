@@ -4,6 +4,7 @@ MODULE utils
 
   PRIVATE
   PUBLIC :: pbc
+  PUBLIC :: getekin
 
 CONTAINS
    
