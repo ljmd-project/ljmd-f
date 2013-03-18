@@ -3,7 +3,7 @@
 ! units: Length=Angstrom, Mass=amu, Energy=kcal
 !
 ! optimized f95 version using cell lists
-!
+!too far
 
 MODULE kinds
   IMPLICIT NONE
