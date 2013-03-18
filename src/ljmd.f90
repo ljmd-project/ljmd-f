@@ -1,9 +1,8 @@
-! 
-! simple lennard-jones potential MD code with velocity verlet.
-! units: Length=Angstrom, Mass=amu, Energy=kcal
-!
-! optimized f95 version using cell lists
-!too far
+!> 
+!! simple lennard-jones potential MD code with velocity verlet.
+!! units: Length=Angstrom, Mass=amu, Energy=kcal
+!!
+!! optimized f95 version using cell lists
 ! foo bar
 !
 ! I was here, Edison
@@ -26,7 +25,7 @@ MODULE physconst
   PUBLIC :: kboltz, mvsq2e
 END MODULE physconst
 
-! module to hold the complete system information 
+!> module to hold the complete system information 
 MODULE mdsys
   USE kinds
   IMPLICIT NONE
@@ -46,7 +45,7 @@ MODULE utils
 
 CONTAINS
    
-! helper function: apply minimum image convention 
+!> helper function: apply minimum image convention 
   FUNCTION pbc(x, boxby2, box)
     REAL(kind=dbl), INTENT(IN)  :: x, boxby2, box
     REAL(kind=dbl) :: pbc
@@ -230,7 +229,7 @@ CONTAINS
   END SUBROUTINE rmcell
 END MODULE cell
 
-! compute kinetic energy
+!> compute kinetic energy
 SUBROUTINE getekin
   USE kinds
   USE mdsys, ONLY: natoms, mass, temp, ekin, vel
@@ -246,7 +245,7 @@ SUBROUTINE getekin
   temp = 2.0_dbl * ekin/(3.0_dbl*DBLE(natoms-1))/kboltz
 END SUBROUTINE getekin
 
-! compute forces 
+!> compute forces 
 SUBROUTINE force
   USE kinds
   USE utils
@@ -360,7 +359,7 @@ SUBROUTINE force
 END SUBROUTINE force
 
 
-! velocity verlet
+!> velocity verlet
 SUBROUTINE velverlet
   USE kinds
   USE mdsys
@@ -462,6 +461,7 @@ PROGRAM LJMD
 
   ! clean up: close files, free memory
   WRITE(stdout,'(A)') 'Simulation Done.'
+  WRITE(stdout,'(A)') 'KatKor was Here.'
   CALL rmcell
   CALL ioclose
 
