@@ -5,6 +5,7 @@
 ! optimized f95 version using cell lists
 ! foo bar
 !
+! I was here, Edison
 
 MODULE kinds
   IMPLICIT NONE
