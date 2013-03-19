@@ -13,6 +13,7 @@ default: ../ljmd-serial.x
 
 clean:
 	rm -f *.mod *.o ../ljmd-serial.x
+	rm -f *.mod *.o Obj-serial
 
 # linker rule
 ../ljmd-serial.x: $(OBJ) 
